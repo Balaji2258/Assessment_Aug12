@@ -8,18 +8,19 @@ public class TwoSum {
 		int[] res = {-1, -1};
 		int offset = 0;
 		while(offset < n) {
-			for(int i = offset+1; i < n; ++i) {
+			for(int i = 1; i < n && i!=offset; ++i) {
 				if(arr[offset] + arr[i] == tar) {
-					System.out.println("The 2 numbers summing up to " + tar + " and their indices are: ");
+//					System.out.println("The 2 numbers summing up to " + tar + " and their indices are: ");
 					System.out.println("Number\tIndex");
 					System.out.println(arr[offset] + "\t" + offset);
 					System.out.println(arr[i] + "\t" + i);
-					return;
+//					return;
+					break;
 				}
 			}
 			offset++;
 		}
-		System.out.println("No such pair of indices exist whose values sum upto " + tar);
+//		System.out.println("No such pair of indices exist whose values sum upto " + tar);
 	}
 	
 	public static void main(String[] args) {

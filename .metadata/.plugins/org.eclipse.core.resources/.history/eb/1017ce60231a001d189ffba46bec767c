@@ -1,0 +1,17 @@
+package com.assignment.studentPackage2;
+
+import java.util.Scanner;
+
+import com.assignment.studentPackage1.Student;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter id, name, phone, percentage of student");
+		Student std = new Student(sc.nextInt(), sc.next(), sc.nextLong(), sc.nextDouble());
+		System.out.println("\nStudent Details: ");
+		disp(std);	}
+
+}

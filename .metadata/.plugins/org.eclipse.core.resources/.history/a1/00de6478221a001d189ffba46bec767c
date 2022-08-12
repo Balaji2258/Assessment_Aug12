@@ -1,0 +1,9 @@
+package com.assignment.studentPackage1;
+
+public class Student {
+	private int id;
+	public String name;
+	protected long phone;
+	public double perc;
+	public char grade;
+}
