@@ -1,0 +1,54 @@
+package com.test.aug12;
+
+import java.util.Scanner;
+
+public class TwoSum {
+
+	public void checkTwoSum(int[] arr, int n, int tar) {
+		int[] res = {-1, -1};
+		int offset = 0;
+		while(offset < n) {
+			for(int i = offset+1; i < n; ++i) {
+				if(arr[offset] + arr[i] == tar) {
+//					res[0] = offset;
+//					res[1] = i;
+					System.out.println("The 2 numbers summing up to " + tar + " and their indices are: ");
+					System.out.println("Number\tIndex");
+					System.out.println(arr[offset] + "\t" + offset);
+					System.out.println(arr[i] + "\t" + i);
+				}
+			}
+		}
+//		return res;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in); 
+		
+		System.out.println("Enter the number of array elements: ");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		
+		System.out.println("Enter " + n + " integer array elements: ");
+		for(int i = 0; i < n; ++i) {
+			arr[i] = sc.nextInt();
+		}
+		
+		System.out.println("Enter the target value: ");
+		int tar = sc.nextInt();
+		
+//		TwoSum ts = new TwoSum();
+//		
+//		int[] res = ts.checkTwoSum(arr, n, tar);
+//		if(res[0] != res[1]) {
+//			System.out.println("The 2 numbers summing up to " + tar + " and their indices are: ");
+//			System.out.println("Number\tIndex");
+//			System.out.println(arr[res[0]] + "\t" + res[0]);
+//			System.out.println(arr[res[1]] + "\t" + res[1]);
+//		}
+//		else
+//			System.out.println("No such pair of indices exist whose values sum upto " + tar);
+	}
+
+}

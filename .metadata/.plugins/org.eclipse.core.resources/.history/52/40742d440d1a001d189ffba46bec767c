@@ -1,0 +1,52 @@
+package com.test.aug12;
+
+import java.util.Scanner;
+
+public class RotateArray {
+
+//	static int rotate = 0;
+	
+	public int[] rotate(int[] arr, int n, int nr) {
+		int j = 0;
+		do {
+			int l = arr[0];
+			for(int i = 0; i < n-1; i++) {
+				arr[i] = arr[i+1];
+			}
+			arr[n-1] = l;
+			++j;
+		} while(j < nr);
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number of array elements: ");
+		int no = sc.nextInt();
+		
+		int[] arr = new int[no];
+		System.out.println("Enter " + no + " array elements: ");
+		for(int i = 0; i < no; ++i) {
+			arr[i] = sc.nextInt();
+		}
+		
+		while(true) {
+			System.out.println("Do you want to rotate the array? (Y/N): ");
+			String r = sc.next();
+			if(r.startsWith("y") || r.startsWith("Y")) {
+				RotateArray ra = new RotateArray();
+				System.out.println("Enter the no. of elements to rotate: ");
+				int nr = sc.nextInt();
+				int[] rot_arr = ra.rotate(arr, no, nr);
+				System.out.println("Rotated array: ");
+				for(int x : arr)
+					System.out.print(x + " ");
+				System.out.println();
+			}
+			else
+				break;
+		}
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.test.aug12;
+
+import java.util.Scanner;
+
+public class BalancedParenthesis {
+	
+	public void checkParenthesis(String exp) {
+		int balance = 0;
+		
+		int f = 0;
+		for(int i = 0 ; i < exp.length();i++)
+		{
+			char ch = exp.charAt(i);
+			
+			if(ch == '(')
+				++balance;
+			else if(ch == ')')
+				--balance;
+			
+			//checking for closing parenthesis before opening parenthesis
+			if(balance < 0)
+			{
+				f = 1 ;
+				break;
+			}
+		}
+		
+		//balance is zero when all parenthesis are balanced
+		if(f == 0 && balance == 0)
+			System.out.println("Parenthesis are balanced");
+		else
+			System.out.println("Parenthesis are unbalanced");
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the expression: ");
+		
+		//storing expression
+		String exp = sc.nextLine();
+		BalancedParenthesis bp = new BalancedParenthesis();
+		bp.checkParenthesis(exp);
+		sc.close();
+	}
+}
